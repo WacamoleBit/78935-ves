@@ -1,0 +1,2 @@
+docker run -it -v /root/78935-ves/practica04:/practica img -bash
+{add local contenedor}
