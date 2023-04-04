@@ -1,2 +1,21 @@
 docker run -it -v /root/78935-ves/practica04:/practica img -bash
 {add local contenedor}
+docker build -t {tag} -f {nombre dockerfile} //por defecto es dockerfile
+
+docker run --rm -it -v /root/78935-ves/practica04:/app -w /app ./mvnw install
+
+/etc/init.d/mysql start
+/etc/init.d/mysql -u root < script.sql
+
+version: '3.3'
+services:
+  saludos:
+    image: wacamolebit/practica04
+    volumes:
+    - /root/app:/app
+    ports:
+    - 8080:8080
+    command:
+    - java
+    - -jar
+    - /app/saludos.jar
